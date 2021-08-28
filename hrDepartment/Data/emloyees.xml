@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<root>
+	<employee dep_name ="Компьютерный отдел" name="Иван" birts="12.11.1990" addr="01-1" phone="111" email="1_@gmail.com" pos="Админ" sal="2500" photo=""/>
+	<employee dep_name ="Компьютерный отдел" name="Пьотр" birts="12.11.1990" addr="02-2" phone="222" email="2_@gmail.com" pos="Кодер" sal="2800" photo=""/>
+	<employee dep_name ="Финансовый отдел" name="Ирина" birts="12.11.1990" addr="03-3" phone="333" email="3_@gmail.com" pos="Бухгалтер" sal="2000" photo=""/>
+	<employee dep_name ="Финансовый отдел" name="Наталья" birts="12.11.1990" addr="04-4" phone="444" email="4_@gmail.com" pos="Главный Бухгалтер" sal="2200" photo=""/>
+	<employee dep_name ="Отдел маркетинга" name="Олександр" birts="12.11.1990" addr="05-5" phone="555" email="5_@gmail.com" pos="Старший Менеджер" sal="2100" photo=""/>
+	<employee dep_name ="Отдел маркетинга" name="Анастасия" birts="12.11.1990" addr="06-6" phone="666" email="6_@gmail.com" pos="Менеджер" sal="2400" photo=""/>
+	<employee dep_name ="Отдел охраны" name="Никита" birts="12.11.1990" addr="07-7" phone="777" email="7_@gmail.com" pos="Охранник" sal="3000" photo=""/>
+	<employee dep_name ="Отдел охраны" name="Илья" birts="12.11.1990" addr="08-8" phone="888" email="8_@gmail.com" pos="Начальник охраны" sal="3700" photo=""/>
+</root>	
