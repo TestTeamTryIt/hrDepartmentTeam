@@ -30,13 +30,12 @@ namespace hrDepartment
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupPhoto = new System.Windows.Forms.GroupBox();
             this.empPhoto = new System.Windows.Forms.PictureBox();
             this.photoDel = new System.Windows.Forms.Button();
-            this.photoSave = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.photoAdd = new System.Windows.Forms.Button();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupDepsEmps = new System.Windows.Forms.GroupBox();
             this.empList = new System.Windows.Forms.ListBox();
             this.depDel = new System.Windows.Forms.Button();
             this.depSave = new System.Windows.Forms.Button();
@@ -45,10 +44,10 @@ namespace hrDepartment
             this.depName = new System.Windows.Forms.TextBox();
             this.deps = new System.Windows.Forms.Label();
             this.depList = new System.Windows.Forms.ComboBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.groupInfo = new System.Windows.Forms.GroupBox();
             this.clearFields = new System.Windows.Forms.Button();
             this.empDel = new System.Windows.Forms.Button();
-            this.empSave = new System.Windows.Forms.Button();
+            this.empDataChange = new System.Windows.Forms.Button();
             this.empAdd = new System.Windows.Forms.Button();
             this.empSalary = new System.Windows.Forms.NumericUpDown();
             this.empBirth = new System.Windows.Forms.DateTimePicker();
@@ -64,38 +63,34 @@ namespace hrDepartment
             this.empAddr = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.empName = new System.Windows.Forms.TextBox();
-            this.groupBox1.SuspendLayout();
+            this.groupPhoto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.empPhoto)).BeginInit();
-            this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
+            this.groupDepsEmps.SuspendLayout();
+            this.groupInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.empSalary)).BeginInit();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // groupPhoto
             // 
-            this.groupBox1.Controls.Add(this.empPhoto);
-            this.groupBox1.Controls.Add(this.photoDel);
-            this.groupBox1.Controls.Add(this.photoSave);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.photoAdd);
-            this.groupBox1.Location = new System.Drawing.Point(388, 0);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(318, 576);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Фото";
+            this.groupPhoto.Controls.Add(this.empPhoto);
+            this.groupPhoto.Controls.Add(this.photoDel);
+            this.groupPhoto.Controls.Add(this.label3);
+            this.groupPhoto.Controls.Add(this.photoAdd);
+            this.groupPhoto.Location = new System.Drawing.Point(284, 0);
+            this.groupPhoto.Name = "groupPhoto";
+            this.groupPhoto.Size = new System.Drawing.Size(280, 511);
+            this.groupPhoto.TabIndex = 0;
+            this.groupPhoto.TabStop = false;
+            this.groupPhoto.Text = "Фото";
             // 
             // empPhoto
             // 
-            this.empPhoto.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.empPhoto.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.empPhoto.Image = global::hrDepartment.Properties.Resources.profile;
             this.empPhoto.InitialImage = null;
             this.empPhoto.Location = new System.Drawing.Point(6, 42);
             this.empPhoto.Name = "empPhoto";
-            this.empPhoto.Size = new System.Drawing.Size(306, 270);
+            this.empPhoto.Size = new System.Drawing.Size(270, 360);
             this.empPhoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.empPhoto.TabIndex = 0;
             this.empPhoto.TabStop = false;
@@ -103,100 +98,92 @@ namespace hrDepartment
             // photoDel
             // 
             this.photoDel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.photoDel.Location = new System.Drawing.Point(210, 522);
+            this.photoDel.Location = new System.Drawing.Point(148, 437);
             this.photoDel.Name = "photoDel";
-            this.photoDel.Size = new System.Drawing.Size(90, 40);
+            this.photoDel.Size = new System.Drawing.Size(110, 30);
             this.photoDel.TabIndex = 4;
-            this.photoDel.Text = "Del";
+            this.photoDel.Text = "Видалити";
             this.photoDel.UseVisualStyleBackColor = true;
-            // 
-            // photoSave
-            // 
-            this.photoSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.photoSave.Location = new System.Drawing.Point(114, 522);
-            this.photoSave.Name = "photoSave";
-            this.photoSave.Size = new System.Drawing.Size(90, 40);
-            this.photoSave.TabIndex = 4;
-            this.photoSave.Text = "Save";
-            this.photoSave.UseVisualStyleBackColor = true;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(6, 24);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(108, 15);
+            this.label3.Size = new System.Drawing.Size(123, 15);
             this.label3.TabIndex = 1;
-            this.label3.Text = "Фото сотрудника";
+            this.label3.Text = "Фото співробітника";
             // 
             // photoAdd
             // 
             this.photoAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.photoAdd.Location = new System.Drawing.Point(18, 522);
+            this.photoAdd.Location = new System.Drawing.Point(22, 437);
             this.photoAdd.Name = "photoAdd";
-            this.photoAdd.Size = new System.Drawing.Size(90, 40);
+            this.photoAdd.Size = new System.Drawing.Size(110, 30);
             this.photoAdd.TabIndex = 4;
-            this.photoAdd.Text = "Add";
+            this.photoAdd.Text = "Додати / Змінити";
             this.photoAdd.UseVisualStyleBackColor = true;
             this.photoAdd.Click += new System.EventHandler(this.photoAdd_Click);
             // 
-            // groupBox2
+            // groupDepsEmps
             // 
-            this.groupBox2.Controls.Add(this.empList);
-            this.groupBox2.Controls.Add(this.depDel);
-            this.groupBox2.Controls.Add(this.depSave);
-            this.groupBox2.Controls.Add(this.depAdd);
-            this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.depName);
-            this.groupBox2.Controls.Add(this.deps);
-            this.groupBox2.Controls.Add(this.depList);
-            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.groupBox2.Location = new System.Drawing.Point(0, 0);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(381, 590);
-            this.groupBox2.TabIndex = 0;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Сотрудники";
+            this.groupDepsEmps.Controls.Add(this.empList);
+            this.groupDepsEmps.Controls.Add(this.depDel);
+            this.groupDepsEmps.Controls.Add(this.depSave);
+            this.groupDepsEmps.Controls.Add(this.depAdd);
+            this.groupDepsEmps.Controls.Add(this.label2);
+            this.groupDepsEmps.Controls.Add(this.depName);
+            this.groupDepsEmps.Controls.Add(this.deps);
+            this.groupDepsEmps.Controls.Add(this.depList);
+            this.groupDepsEmps.Dock = System.Windows.Forms.DockStyle.Left;
+            this.groupDepsEmps.Location = new System.Drawing.Point(0, 0);
+            this.groupDepsEmps.Name = "groupDepsEmps";
+            this.groupDepsEmps.Size = new System.Drawing.Size(280, 511);
+            this.groupDepsEmps.TabIndex = 0;
+            this.groupDepsEmps.TabStop = false;
+            this.groupDepsEmps.Text = "Співробітники";
             // 
             // empList
             // 
             this.empList.FormattingEnabled = true;
             this.empList.ItemHeight = 15;
-            this.empList.Location = new System.Drawing.Point(6, 187);
+            this.empList.Location = new System.Drawing.Point(5, 185);
             this.empList.Name = "empList";
             this.empList.ScrollAlwaysVisible = true;
-            this.empList.Size = new System.Drawing.Size(368, 364);
+            this.empList.Size = new System.Drawing.Size(270, 319);
             this.empList.TabIndex = 5;
             this.empList.SelectedIndexChanged += new System.EventHandler(this.empList_SelectedIndexChanged);
             // 
             // depDel
             // 
             this.depDel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.depDel.Location = new System.Drawing.Point(240, 100);
+            this.depDel.Location = new System.Drawing.Point(183, 118);
             this.depDel.Name = "depDel";
-            this.depDel.Size = new System.Drawing.Size(90, 25);
+            this.depDel.Size = new System.Drawing.Size(75, 30);
             this.depDel.TabIndex = 4;
-            this.depDel.Text = "Del";
+            this.depDel.Text = "Видалити";
             this.depDel.UseVisualStyleBackColor = true;
+            this.depDel.Click += new System.EventHandler(this.depDel_Click);
             // 
             // depSave
             // 
             this.depSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.depSave.Location = new System.Drawing.Point(144, 100);
+            this.depSave.Location = new System.Drawing.Point(102, 118);
             this.depSave.Name = "depSave";
-            this.depSave.Size = new System.Drawing.Size(90, 25);
+            this.depSave.Size = new System.Drawing.Size(75, 30);
             this.depSave.TabIndex = 4;
-            this.depSave.Text = "Save";
+            this.depSave.Text = "Змінити";
             this.depSave.UseVisualStyleBackColor = true;
+            this.depSave.Click += new System.EventHandler(this.depSave_Click);
             // 
             // depAdd
             // 
             this.depAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.depAdd.Location = new System.Drawing.Point(48, 100);
+            this.depAdd.Location = new System.Drawing.Point(21, 118);
             this.depAdd.Name = "depAdd";
-            this.depAdd.Size = new System.Drawing.Size(90, 25);
+            this.depAdd.Size = new System.Drawing.Size(75, 30);
             this.depAdd.TabIndex = 4;
-            this.depAdd.Text = "Add";
+            this.depAdd.Text = "Додати";
             this.depAdd.UseVisualStyleBackColor = true;
             this.depAdd.Click += new System.EventHandler(this.depAdd_Click);
             // 
@@ -205,15 +192,15 @@ namespace hrDepartment
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(6, 169);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(127, 15);
+            this.label2.Size = new System.Drawing.Size(138, 15);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Список сотрудников:";
+            this.label2.Text = "Список співробітників:";
             // 
             // depName
             // 
-            this.depName.Location = new System.Drawing.Point(7, 73);
+            this.depName.Location = new System.Drawing.Point(5, 73);
             this.depName.Name = "depName";
-            this.depName.Size = new System.Drawing.Size(367, 21);
+            this.depName.Size = new System.Drawing.Size(270, 21);
             this.depName.TabIndex = 3;
             // 
             // deps
@@ -221,91 +208,95 @@ namespace hrDepartment
             this.deps.AutoSize = true;
             this.deps.Location = new System.Drawing.Point(6, 24);
             this.deps.Name = "deps";
-            this.deps.Size = new System.Drawing.Size(147, 15);
+            this.deps.Size = new System.Drawing.Size(143, 15);
             this.deps.TabIndex = 1;
-            this.deps.Text = "Список департаментов:";
+            this.deps.Text = "Список департаментів:";
             // 
             // depList
             // 
             this.depList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.depList.FormattingEnabled = true;
-            this.depList.Location = new System.Drawing.Point(7, 42);
+            this.depList.Location = new System.Drawing.Point(5, 42);
             this.depList.Name = "depList";
-            this.depList.Size = new System.Drawing.Size(367, 23);
+            this.depList.Size = new System.Drawing.Size(270, 23);
             this.depList.TabIndex = 0;
             this.depList.SelectedIndexChanged += new System.EventHandler(this.depList_SelectedIndexChanged);
             // 
-            // groupBox3
+            // groupInfo
             // 
-            this.groupBox3.Controls.Add(this.clearFields);
-            this.groupBox3.Controls.Add(this.empDel);
-            this.groupBox3.Controls.Add(this.empSave);
-            this.groupBox3.Controls.Add(this.empAdd);
-            this.groupBox3.Controls.Add(this.empSalary);
-            this.groupBox3.Controls.Add(this.empBirth);
-            this.groupBox3.Controls.Add(this.label5);
-            this.groupBox3.Controls.Add(this.label10);
-            this.groupBox3.Controls.Add(this.label9);
-            this.groupBox3.Controls.Add(this.empPos);
-            this.groupBox3.Controls.Add(this.label8);
-            this.groupBox3.Controls.Add(this.empEmail);
-            this.groupBox3.Controls.Add(this.label7);
-            this.groupBox3.Controls.Add(this.empPhone);
-            this.groupBox3.Controls.Add(this.label6);
-            this.groupBox3.Controls.Add(this.empAddr);
-            this.groupBox3.Controls.Add(this.label4);
-            this.groupBox3.Controls.Add(this.empName);
-            this.groupBox3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.groupBox3.Location = new System.Drawing.Point(712, 0);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(350, 590);
-            this.groupBox3.TabIndex = 0;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Информация";
+            this.groupInfo.Controls.Add(this.clearFields);
+            this.groupInfo.Controls.Add(this.empDel);
+            this.groupInfo.Controls.Add(this.empDataChange);
+            this.groupInfo.Controls.Add(this.empAdd);
+            this.groupInfo.Controls.Add(this.empSalary);
+            this.groupInfo.Controls.Add(this.empBirth);
+            this.groupInfo.Controls.Add(this.label5);
+            this.groupInfo.Controls.Add(this.label10);
+            this.groupInfo.Controls.Add(this.label9);
+            this.groupInfo.Controls.Add(this.empPos);
+            this.groupInfo.Controls.Add(this.label8);
+            this.groupInfo.Controls.Add(this.empEmail);
+            this.groupInfo.Controls.Add(this.label7);
+            this.groupInfo.Controls.Add(this.empPhone);
+            this.groupInfo.Controls.Add(this.label6);
+            this.groupInfo.Controls.Add(this.empAddr);
+            this.groupInfo.Controls.Add(this.label4);
+            this.groupInfo.Controls.Add(this.empName);
+            this.groupInfo.Dock = System.Windows.Forms.DockStyle.Right;
+            this.groupInfo.Location = new System.Drawing.Point(568, 0);
+            this.groupInfo.Name = "groupInfo";
+            this.groupInfo.Size = new System.Drawing.Size(280, 511);
+            this.groupInfo.TabIndex = 0;
+            this.groupInfo.TabStop = false;
+            this.groupInfo.Text = "Інформація";
             // 
             // clearFields
             // 
             this.clearFields.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.clearFields.Location = new System.Drawing.Point(80, 384);
+            this.clearFields.Location = new System.Drawing.Point(6, 364);
             this.clearFields.Name = "clearFields";
-            this.clearFields.Size = new System.Drawing.Size(192, 40);
+            this.clearFields.Size = new System.Drawing.Size(270, 31);
             this.clearFields.TabIndex = 4;
-            this.clearFields.Text = "Очистить форму";
+            this.clearFields.Text = "Очистити форму";
             this.clearFields.UseVisualStyleBackColor = true;
+            this.clearFields.Click += new System.EventHandler(this.clearFields_Click);
             // 
             // empDel
             // 
             this.empDel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.empDel.Location = new System.Drawing.Point(80, 522);
+            this.empDel.Location = new System.Drawing.Point(6, 473);
             this.empDel.Name = "empDel";
-            this.empDel.Size = new System.Drawing.Size(192, 40);
+            this.empDel.Size = new System.Drawing.Size(270, 30);
             this.empDel.TabIndex = 4;
-            this.empDel.Text = "Удалить сотрудника";
+            this.empDel.Text = "Видалити співробітника";
             this.empDel.UseVisualStyleBackColor = true;
+            this.empDel.Click += new System.EventHandler(this.empDel_Click);
             // 
-            // empSave
+            // empDataChange
             // 
-            this.empSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.empSave.Location = new System.Drawing.Point(80, 476);
-            this.empSave.Name = "empSave";
-            this.empSave.Size = new System.Drawing.Size(192, 40);
-            this.empSave.TabIndex = 4;
-            this.empSave.Text = "Сохранить сотрудника";
-            this.empSave.UseVisualStyleBackColor = true;
+            this.empDataChange.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.empDataChange.Location = new System.Drawing.Point(6, 437);
+            this.empDataChange.Name = "empDataChange";
+            this.empDataChange.Size = new System.Drawing.Size(270, 30);
+            this.empDataChange.TabIndex = 4;
+            this.empDataChange.Text = "Змінити дані";
+            this.empDataChange.UseVisualStyleBackColor = true;
+            this.empDataChange.Click += new System.EventHandler(this.empDataChange_Click);
             // 
             // empAdd
             // 
             this.empAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.empAdd.Location = new System.Drawing.Point(80, 430);
+            this.empAdd.Location = new System.Drawing.Point(6, 401);
             this.empAdd.Name = "empAdd";
-            this.empAdd.Size = new System.Drawing.Size(192, 40);
+            this.empAdd.Size = new System.Drawing.Size(270, 30);
             this.empAdd.TabIndex = 4;
-            this.empAdd.Text = "Добавить сотрудника";
+            this.empAdd.Text = "Додати співробітника";
             this.empAdd.UseVisualStyleBackColor = true;
+            this.empAdd.Click += new System.EventHandler(this.empAdd_Click);
             // 
             // empSalary
             // 
-            this.empSalary.Location = new System.Drawing.Point(193, 304);
+            this.empSalary.Location = new System.Drawing.Point(128, 304);
             this.empSalary.Maximum = new decimal(new int[] {
             100000,
             0,
@@ -319,7 +310,7 @@ namespace hrDepartment
             // 
             this.empBirth.Location = new System.Drawing.Point(6, 87);
             this.empBirth.Name = "empBirth";
-            this.empBirth.Size = new System.Drawing.Size(338, 21);
+            this.empBirth.Size = new System.Drawing.Size(270, 21);
             this.empBirth.TabIndex = 4;
             // 
             // label5
@@ -327,33 +318,33 @@ namespace hrDepartment
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(6, 69);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(101, 15);
+            this.label5.Size = new System.Drawing.Size(115, 15);
             this.label5.TabIndex = 1;
-            this.label5.Text = "Дата рождения:";
+            this.label5.Text = "Дата народження:";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(120, 306);
+            this.label10.Location = new System.Drawing.Point(21, 306);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(67, 15);
+            this.label10.Size = new System.Drawing.Size(108, 15);
             this.label10.TabIndex = 1;
-            this.label10.Text = "Зарплата:";
+            this.label10.Text = "Заробітна плата:";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(6, 243);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(76, 15);
+            this.label9.Size = new System.Drawing.Size(53, 15);
             this.label9.TabIndex = 1;
-            this.label9.Text = "Должность:";
+            this.label9.Text = "Посада:";
             // 
             // empPos
             // 
             this.empPos.Location = new System.Drawing.Point(6, 263);
             this.empPos.Name = "empPos";
-            this.empPos.Size = new System.Drawing.Size(338, 21);
+            this.empPos.Size = new System.Drawing.Size(270, 21);
             this.empPos.TabIndex = 3;
             // 
             // label8
@@ -369,7 +360,7 @@ namespace hrDepartment
             // 
             this.empEmail.Location = new System.Drawing.Point(6, 219);
             this.empEmail.Name = "empEmail";
-            this.empEmail.Size = new System.Drawing.Size(338, 21);
+            this.empEmail.Size = new System.Drawing.Size(270, 21);
             this.empEmail.TabIndex = 3;
             // 
             // label7
@@ -385,7 +376,7 @@ namespace hrDepartment
             // 
             this.empPhone.Location = new System.Drawing.Point(6, 175);
             this.empPhone.Name = "empPhone";
-            this.empPhone.Size = new System.Drawing.Size(338, 21);
+            this.empPhone.Size = new System.Drawing.Size(270, 21);
             this.empPhone.TabIndex = 3;
             // 
             // label6
@@ -393,15 +384,15 @@ namespace hrDepartment
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(6, 111);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(44, 15);
+            this.label6.Size = new System.Drawing.Size(51, 15);
             this.label6.TabIndex = 1;
-            this.label6.Text = "Адрес:";
+            this.label6.Text = "Адреса:";
             // 
             // empAddr
             // 
             this.empAddr.Location = new System.Drawing.Point(6, 131);
             this.empAddr.Name = "empAddr";
-            this.empAddr.Size = new System.Drawing.Size(338, 21);
+            this.empAddr.Size = new System.Drawing.Size(270, 21);
             this.empAddr.TabIndex = 3;
             // 
             // label4
@@ -409,38 +400,41 @@ namespace hrDepartment
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(6, 24);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(94, 15);
+            this.label4.Size = new System.Drawing.Size(93, 15);
             this.label4.TabIndex = 1;
-            this.label4.Text = "Фамилия, имя:";
+            this.label4.Text = "Прізвище, ім\'я:";
             // 
             // empName
             // 
             this.empName.Location = new System.Drawing.Point(6, 44);
             this.empName.Name = "empName";
-            this.empName.Size = new System.Drawing.Size(338, 21);
+            this.empName.Size = new System.Drawing.Size(270, 21);
             this.empName.TabIndex = 3;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1062, 590);
-            this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
+            this.ClientSize = new System.Drawing.Size(848, 511);
+            this.Controls.Add(this.groupInfo);
+            this.Controls.Add(this.groupDepsEmps);
+            this.Controls.Add(this.groupPhoto);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "Form1";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.RightToLeftLayout = true;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Система управления отделом кадров";
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.groupPhoto.ResumeLayout(false);
+            this.groupPhoto.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.empPhoto)).EndInit();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
+            this.groupDepsEmps.ResumeLayout(false);
+            this.groupDepsEmps.PerformLayout();
+            this.groupInfo.ResumeLayout(false);
+            this.groupInfo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.empSalary)).EndInit();
             this.ResumeLayout(false);
 
@@ -448,13 +442,12 @@ namespace hrDepartment
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox groupPhoto;
+        private System.Windows.Forms.GroupBox groupDepsEmps;
         private System.Windows.Forms.Label deps;
         private System.Windows.Forms.ComboBox depList;
-        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox groupInfo;
         private System.Windows.Forms.Button photoDel;
-        private System.Windows.Forms.Button photoSave;
         private System.Windows.Forms.Button depDel;
         private System.Windows.Forms.Button photoAdd;
         private System.Windows.Forms.Button depSave;
@@ -474,7 +467,7 @@ namespace hrDepartment
         private System.Windows.Forms.TextBox empName;
         private System.Windows.Forms.Button clearFields;
         private System.Windows.Forms.Button empDel;
-        private System.Windows.Forms.Button empSave;
+        private System.Windows.Forms.Button empDataChange;
         private System.Windows.Forms.Button empAdd;
         private System.Windows.Forms.NumericUpDown empSalary;
         private System.Windows.Forms.Label label10;

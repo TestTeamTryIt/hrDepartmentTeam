@@ -68,6 +68,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -84,8 +85,18 @@
   <ItemGroup>
     <Content Include="Data\departments.xml" />
     <Content Include="Data\emloyees.xml" />
+    <Content Include="Images\anastasiya.png" />
+    <Content Include="Images\anastasiya_2.png" />
     <Content Include="Images\favicon.ico" />
-    <Content Include=".gitignore" />
+    <Content Include="Images\female_02.png" />
+    <Content Include="Images\female_03.png" />
+    <Content Include="Images\illya.png" />
+    <Content Include="Images\iryna.png" />
+    <Content Include="Images\ivan.png" />
+    <Content Include="Images\mikita.png" />
+    <Content Include="Images\natalya.png" />
+    <Content Include="Images\oleksander.png" />
+    <Content Include="Images\petro.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Images\profile.png" />
