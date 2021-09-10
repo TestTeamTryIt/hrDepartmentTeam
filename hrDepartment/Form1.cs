@@ -265,7 +265,7 @@ namespace hrDepartment
                     emp.Attribute("name").Value == eName).FirstOrDefault();
                 if (emps == null)
                 {
-                    if (File.Exists(sourcePhotoPath)) //if photo exists in user defined folder
+                    if (photoPath != null) //if photo was changed
                     {
                         File.Copy(sourcePhotoPath, photoPath); //copy photo to @"..\..\Images\"
                         ePhoto = Path.GetFileName(photoPath); // set copied photo name to save
@@ -350,18 +350,12 @@ namespace hrDepartment
                     emps[index].Attribute("pos").Value = empPos.Text;
                     emps[index].Attribute("sal").Value = empSalary.Value.ToString();
 
-                    if (photoPath != null && photoPath != "")
+                    if (photoPath != null) //if photo was changed
                     {
-                        string currentPhotoPath = @"..\..\Images\" + emps[index].Attribute("photo").Value;
-                        if (photoPath != currentPhotoPath) //if photo changed
-                        {
-                            File.Copy(sourcePhotoPath, photoPath); //copy photo to @"..\..\Images\"
-                            empPhoto.Image = Image.FromFile(photoPath); //set copied photo name to show
-                            emps[index].Attribute("photo").Value = Path.GetFileName(photoPath); //set copied photo name to save
-                            photoPath = null;
-                        }
-                        else
-                            emps[index].Attribute("photo").Value = "";
+                        File.Copy(sourcePhotoPath, photoPath); //copy photo to @"..\..\Images\"
+                        empPhoto.Image = Image.FromFile(photoPath); //set copied photo name to show
+                        emps[index].Attribute("photo").Value = Path.GetFileName(photoPath); //set copied photo name to save
+                        photoPath = null;
                     }
                     doc2.Save(path2);
                     depListShowEmps();
@@ -396,6 +390,10 @@ namespace hrDepartment
                     emps[index].Attribute("photo").Value = "";
                     empPhoto.Image = Image.FromFile(defPhotoPath);
                     //File.Delete(tempPhotoPath);
+                    doc2.Save(path2);
+                    MessageBox.Show($"Фото співробітника {emps[index].Attribute("name").Value}\n" +
+                        $"успішно видалене", "Інформація",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information); ;
                 }
                 else
                     MessageBox.Show("Інфоормація не змінена!", "Увага!",
