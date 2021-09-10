@@ -104,6 +104,7 @@ namespace hrDepartment
             this.photoDel.TabIndex = 4;
             this.photoDel.Text = "Видалити";
             this.photoDel.UseVisualStyleBackColor = true;
+            this.photoDel.Click += new System.EventHandler(this.photoDel_Click);
             // 
             // label3
             // 

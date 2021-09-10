@@ -223,10 +223,8 @@ namespace hrDepartment
             if(ofd.ShowDialog() == DialogResult.OK)
             {
                 sourcePhotoPath = ofd.FileName;
-                //photoPath = @"..\..\Images\" + Path.GetFileName(sourcePhotoPath);
                 string randomName = $"{rand.Next(0, 999999):000000}";
                 photoPath = @"..\..\Images\" + randomName + Path.GetExtension(sourcePhotoPath);
-                //File.Copy(sourcePhotoPath, photoPath);
                 empPhoto.Image = Image.FromFile(sourcePhotoPath);
             }
         }
@@ -271,6 +269,7 @@ namespace hrDepartment
                     {
                         File.Copy(sourcePhotoPath, photoPath); //copy photo to @"..\..\Images\"
                         ePhoto = Path.GetFileName(photoPath); // set copied photo name to save
+                        photoPath = null;
                     }
 
                     else
@@ -296,8 +295,6 @@ namespace hrDepartment
                 else
                     MessageBox.Show("Вказаний співробітник вже існує!", "Увага!",
                         MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
-
             }
             else
                 MessageBox.Show("Введіть прізвище та ім'я співробітника!", "Увага!", 
@@ -316,15 +313,12 @@ namespace hrDepartment
                     $"{emps[index].Attribute("name").Value}?", "Увага!",
                         MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    /////////////////
-                    string tempPhotoPath = @"..\..\Images\" + emps[index].Attribute("photo").Value;
-                    /////////////////
+                    //string tempPhotoPath = @"..\..\Images\" + emps[index].Attribute("photo").Value;
                     emps[index].Remove();
                     doc2.Save(path2);
-                    //empPhoto.Image = Image.FromFile(defPhotoPath);
-                    //File.Delete(tempPhotoPath);
                     depListShowEmps();
                     ClearFields();
+                    //File.Delete(tempPhotoPath);
                     MessageBox.Show("Дані співробітника видалено успішно", "Інформація",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -356,15 +350,19 @@ namespace hrDepartment
                     emps[index].Attribute("pos").Value = empPos.Text;
                     emps[index].Attribute("sal").Value = empSalary.Value.ToString();
 
-                    if (File.Exists(sourcePhotoPath)) //if photo exists in user defined folder
+                    if (photoPath != null && photoPath != "")
                     {
-                        File.Copy(sourcePhotoPath, photoPath); //copy photo to @"..\..\Images\"
-                        empPhoto.Image = Image.FromFile(photoPath); //set copied photo name to show
-                        emps[index].Attribute("photo").Value = Path.GetFileName(photoPath); //set copied photo name to save
+                        string currentPhotoPath = @"..\..\Images\" + emps[index].Attribute("photo").Value;
+                        if (photoPath != currentPhotoPath) //if photo changed
+                        {
+                            File.Copy(sourcePhotoPath, photoPath); //copy photo to @"..\..\Images\"
+                            empPhoto.Image = Image.FromFile(photoPath); //set copied photo name to show
+                            emps[index].Attribute("photo").Value = Path.GetFileName(photoPath); //set copied photo name to save
+                            photoPath = null;
+                        }
+                        else
+                            emps[index].Attribute("photo").Value = "";
                     }
-                    else
-                        emps[index].Attribute("photo").Value = "";
-
                     doc2.Save(path2);
                     depListShowEmps();
                     ClearFields();
@@ -372,10 +370,41 @@ namespace hrDepartment
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
-                    MessageBox.Show("Інфоормація не змінена!\n" +
-                        "Оберіть співробітника зі списку", "Увага!", 
+                    MessageBox.Show("Інфоормація не змінена!", "Увага!", 
                          MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }                
+            }
+            else
+                MessageBox.Show("Інфоормація не змінена!\n" +
+                    "Оберіть співробітника зі списку", "Увага!",
+                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+
+        private void photoDel_Click(object sender, EventArgs e)
+        {
+            int index = empList.SelectedIndex;
+            if (index > -1)
+            {
+                var emps = doc2.Root.Elements("employee")
+                        .Where(n => n.Attribute("dep_name").Value == depList.SelectedItem.ToString())
+                        .ToList();
+
+                if (MessageBox.Show($"Ви дійсно збираєтесь видалити фото співробітника\n" +
+                    $"{emps[index].Attribute("name").Value}?", "Увага!",
+                        MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    //string tempPhotoPath = @"..\..\Images\" + emps[index].Attribute("photo").Value;
+                    emps[index].Attribute("photo").Value = "";
+                    empPhoto.Image = Image.FromFile(defPhotoPath);
+                    //File.Delete(tempPhotoPath);
+                }
+                else
+                    MessageBox.Show("Інфоормація не змінена!", "Увага!",
+                         MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            MessageBox.Show("Інфоормація не змінена!\n" +
+                "Оберіть співробітника зі списку", "Увага!",
+                 MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
     }
 }

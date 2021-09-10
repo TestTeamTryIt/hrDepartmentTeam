@@ -1,13 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
-  <employee dep_name="Комп'ютерний відділ" name="Іван" birth="12.01.1990" addr="01-1" phone="111" email="1_@gmail.com" pos="Админ" sal="2500" photo="ivan.png" />
-  <employee dep_name="Комп'ютерний відділ" name="Петро" birth="12.05.1990" addr="02-2" phone="222" email="2_@gmail.com" pos="Кодер" sal="2800" photo="petro.png" />
-  <employee dep_name="Фінансовий відділ" name="Ірина" birth="12.12.1990" addr="03-3" phone="333" email="3_@gmail.com" pos="Бухгалтер" sal="2000" photo="iryna.png" />
-  <employee dep_name="Фінансовий відділ" name="Наталля" birth="12.08.1990" addr="04-4" phone="444" email="4_@gmail.com" pos="Главный Бухгалтер" sal="2200" photo="natalya.png" />
-  <employee dep_name="Відділ маркетингу" name="Олександр" birth="12.07.1990" addr="05-5" phone="555" email="5_@gmail.com" pos="Старший Менеджер" sal="2100" photo="oleksander.png" />
-  <employee dep_name="Відділ маркетингу" name="Анастасія" birth="12.11.1990" addr="06-6" phone="666" email="6_@gmail.com" pos="Менеджер" sal="2400" photo="anastasiya.png" />
-  <employee dep_name="Відділ охорони" name="Микита" birth="12.12.1978" addr="07-7" phone="777" email="7_@gmail.com" pos="Охранник" sal="3000" photo="mikita.png" />
-  <employee dep_name="Відділ охорони" name="Ілля" birth="12.11.1995" addr="08-8" phone="888" email="8_@gmail.com" pos="Начальник охраны" sal="3700" photo="illya.png" />
-  <employee dep_name="Комп'ютерний відділ" name="new_emp_3" birth="10.09.2021 11:17:18" addr="" phone="" email="" pos="" sal="0" photo="017005.png" />
-  <employee dep_name="Комп'ютерний відділ" name="Kolyni" birth="10.09.2021 11:40:13" addr="" phone="" email="" pos="" sal="0" photo="" />
+  <employee dep_name="Комп'ютерний відділ" name="Іван" birth="12.01.1990 0:00:00" addr="01-1" phone="111" email="1_@gmail.com" pos="Админ" sal="2500" photo="445543.png" />
+  <employee dep_name="Комп'ютерний відділ" name="Петро" birth="12.05.1990 0:00:00" addr="02-2" phone="222" email="2_@gmail.com" pos="Кодер" sal="2800" photo="071424.png" />
+  <employee dep_name="Фінансовий відділ" name="Ірина" birth="12.12.1990 0:00:00" addr="03-3" phone="333" email="3_@gmail.com" pos="Бухгалтер" sal="2000" photo="884281.png" />
+  <employee dep_name="Фінансовий відділ" name="Наталля" birth="12.08.1990 0:00:00" addr="04-4" phone="444" email="4_@gmail.com" pos="Главный Бухгалтер" sal="2200" photo="583881.png" />
+  <employee dep_name="Відділ маркетингу" name="Олександр" birth="12.07.1990 0:00:00" addr="05-5" phone="555" email="5_@gmail.com" pos="Старший Менеджер" sal="2100" photo="016216.png" />
+  <employee dep_name="Відділ маркетингу" name="Анастасія" birth="12.11.1990 0:00:00" addr="06-6" phone="666" email="6_@gmail.com" pos="Менеджер" sal="2400" photo="077128.png" />
+  <employee dep_name="Відділ охорони" name="Микита" birth="12.12.1978 0:00:00" addr="07-7" phone="777" email="7_@gmail.com" pos="Охранник" sal="3000" photo="247322.png" />
+  <employee dep_name="Відділ охорони" name="Ілля Петрович" birth="12.11.1995 0:00:00" addr="08-8" phone="888" email="8_@gmail.com" pos="Начальник охраны" sal="3700" photo="536728.png" />
+  <employee dep_name="Відділ маркетингу" name="Олена" birth="10.11.1996 14:13:32" addr="2255" phone="223322" email="olena@gmail.com" pos="менеджер" sal="1500" photo="648818.png" />
 </root>
