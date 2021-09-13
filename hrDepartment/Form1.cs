@@ -313,12 +313,12 @@ namespace hrDepartment
                     $"{emps[index].Attribute("name").Value}?", "Увага!",
                         MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    //string tempPhotoPath = @"..\..\Images\" + emps[index].Attribute("photo").Value;
+                    string tempPhotoPath = @"..\..\Images\" + emps[index].Attribute("photo").Value;
                     emps[index].Remove();
                     doc2.Save(path2);
                     depListShowEmps();
                     ClearFields();
-                    //File.Delete(tempPhotoPath);
+                    File.Delete(tempPhotoPath);
                     MessageBox.Show("Дані співробітника видалено успішно", "Інформація",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -386,10 +386,10 @@ namespace hrDepartment
                     $"{emps[index].Attribute("name").Value}?", "Увага!",
                         MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    //string tempPhotoPath = @"..\..\Images\" + emps[index].Attribute("photo").Value;
+                    string tempPhotoPath = @"..\..\Images\" + emps[index].Attribute("photo").Value;
                     emps[index].Attribute("photo").Value = "";
                     empPhoto.Image = Image.FromFile(defPhotoPath);
-                    //File.Delete(tempPhotoPath);
+                    File.Delete(tempPhotoPath);
                     doc2.Save(path2);
                     MessageBox.Show($"Фото співробітника {emps[index].Attribute("name").Value}\n" +
                         $"успішно видалене", "Інформація",

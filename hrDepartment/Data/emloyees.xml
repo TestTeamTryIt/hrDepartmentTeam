@@ -7,7 +7,8 @@
   <employee dep_name="Відділ маркетингу" name="Олександр" birth="12.07.1990 0:00:00" addr="05-5" phone="555" email="5_@gmail.com" pos="Старший Менеджер" sal="2100" photo="016216.png" />
   <employee dep_name="Відділ маркетингу" name="Анастасія" birth="12.11.1990 0:00:00" addr="06-6" phone="666" email="6_@gmail.com" pos="Менеджер" sal="2400" photo="077128.png" />
   <employee dep_name="Відділ охорони" name="Микита" birth="12.12.1978 0:00:00" addr="07-7" phone="777" email="7_@gmail.com" pos="Охранник" sal="3000" photo="247322.png" />
-  <employee dep_name="Відділ охорони" name="Ілля Петрович Кива" birth="12.11.1995 0:00:00" addr="08-8" phone="888" email="8_@gmail.com" pos="Начальник охраны" sal="3700" photo="" />
+  <employee dep_name="Відділ охорони" name="Ілля Петрович Кива" birth="12.11.1995 0:00:00" addr="08-8" phone="888" email="8_@gmail.com" pos="Начальник охраны" sal="3700" photo="139077.png" />
   <employee dep_name="Відділ маркетингу" name="Олена" birth="10.11.1996 14:13:32" addr="2255" phone="223322" email="olena@gmail.com" pos="менеджер" sal="1500" photo="648818.png" />
   <employee dep_name="Відділ маркетингу" name="Ірина" birth="22.09.1998 14:42:01" addr="" phone="" email="" pos="" sal="0,0" photo="" />
+  <employee dep_name="Комп'ютерний відділ" name="new_emp1" birth="13.09.2021 18:27:55" addr="" phone="" email="" pos="" sal="0,0" photo="" />
 </root>
